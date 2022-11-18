@@ -12,23 +12,41 @@
         <h1>Les petits plats</h1>
     </header>
     <main>
-        <section>
+        <div class="form">
             <form>
-                <input class="mainInput" type="text" placeholder="Rechercher une recette"><img class="iconSearch" src="./assets/icon/Vector.png" alt="">
-                <div>
-                    <button type="button" class="firstInput showInput">Ingredients</button><img class="iconArrow" src="./assets/icon/Vector2.png" alt="">
-                    <input class="firstInput hideInput" type="text" placeholder="Rechercher un ingrédient"><img class="iconCloseArrow hideIcon" src="./assets/icon/Vector4.png" alt="">
-                    <button type="button" class="secondInput showInput">Appareils</button><img class="iconArrow" src="./assets/icon/Vector2.png" alt="">
-                    <input class="secondInput hideInput" type="text" placeholder="Rechercher un appareil"><img class="iconCloseArrow hideIcon" src="./assets/icon/Vector4.png" alt="">
-                    <button type="button" class="thirdInput showInput">Ustensiles</button><img class="iconArrow" src="./assets/icon/Vector2.png" alt="">
-                    <input class="thirdInput hideInput" type="text" placeholder="Rechercher un ustensil"><img class="iconCloseArrow hideIcon" src="./assets/icon/Vector4.png" alt="">
+                <input class="mainInput" type="text" placeholder="Rechercher une recette" aria-label="test"><img class="iconSearch" src="./assets/icon/VectorSearch.png" alt="">
+                <div class="message"></div>
+                <div class="tag"></div>
+                <div class="formDiv">
+                    <button type="button" class="firstInput showInput">Ingredients</button><img class="iconArrow" src="./assets/icon/VectorUp.png" alt="">
+                    <div id="ingredient" class="formClose">
+                        <input class="hideInput hideInputFirst" type="text" placeholder="Rechercher un ingrédient"><img class="iconCloseArrow hideIcon" src="./assets/icon/VectorDown.png" alt="">
+                        <div id="showIng"></div>
+                    </div>
+                    <button type="button" class="secondInput showInput">Appareils</button><img class="iconArrow" src="./assets/icon/VectorUp.png" alt="">
+                    <div id="appareil" class="formClose">
+                        <input class="hideInput hideInputSecond" type="text" placeholder="Rechercher un appareil"><img class="iconCloseArrow hideIcon" src="./assets/icon/VectorDown.png" alt="">
+                        <div id="showApp"></div>
+                    </div>
+                    <button type="button" class="thirdInput showInput">Ustensiles</button><img class="iconArrow" src="./assets/icon/VectorUp.png" alt="">
+                    <div id="ustensil" class="formClose">
+                        <input class="hideInput hideInputThird" type="text" placeholder="Rechercher un ustensil"><img class="iconCloseArrow hideIcon" src="./assets/icon/VectorDown.png" alt="">
+                        <div id="showUst"></div>
+                    </div>
                 </div>
-                </ul>
             </form>
-        </section>
-        <section>
-        </section>
+        </div>
+        <div class="recette">
+        </div>
     </main>
     <script src="./script/app.js"></script>
+    <script src="./script/tool/getDataMainInput.js"></script>
+    <script src="./script/algo/main.js"></script>
+    <script src="./script/algo/ingredient.js"></script>
+    <script src="./script/algo/appareil.js"></script>
+    <script src="./script/algo/ustensil.js"></script>
+    <script src="./script/factory/factory.js"></script>
+    <script src="./script/tool/deleteDom.js"></script>
+    <script src="./script/tool/tag.js"></script>
 </body>
 </html>

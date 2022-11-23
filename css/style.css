@@ -398,6 +398,11 @@ form input:focus {
     }
 }
 
+@media screen and (max-width: 1400px) {
+    .formDiv {
+        max-width: 80%;
+    }
+}
 
 @media screen and (max-width: 1025px) {
     .recette {
@@ -406,6 +411,34 @@ form input:focus {
 
     #showIng, #showApp, #showUst {
         grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #showIng, #showApp, #showUst {
+        grid-template-columns: 1fr;
+    }
+
+    .formDiv {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+    }
+
+    .recette {
+        margin-top: 270px;
+    }
+
+    .iconArrow {
+        width: 15px;
+        height: 9px;
+        top: -40px;
+        position: relative;
+        left: 490px;
+    }
+    
+    .firstInput, .secondInput, .thirdInput {
+        width: 93%;
     }
 }
 
@@ -424,6 +457,15 @@ form input:focus {
 
     .divTop h2 {
         max-width: 185px;
+    }
+
+    .firstInput, .secondInput, .thirdInput {
+        width: 105%;
+    }
+
+    #ingredient, #appareil, #ustensil {
+        width: 94%;
+        margin-bottom: 11px;
     }
 }
 
@@ -461,6 +503,10 @@ form input:focus {
         top: -40px;
         position: relative;
         left: 390px;
+    }
+
+    .firstInput, .secondInput, .thirdInput {
+        width: 100%;
     }
 }
 
@@ -502,7 +548,7 @@ form input:focus {
     }
 
     #ingredient, #appareil, #ustensil {
-        width: 97%;
+        width: 96%;
         margin-right: 29px;
         padding: 10px 10px 10px 10px;
         margin-bottom: 11px;

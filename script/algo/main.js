@@ -22,7 +22,7 @@ function mainAlgo(recipes) {
               .includes(mainInput.value.toLowerCase()) == true
           ) {
             getRecipe.push(recipes[i]);
-            break;
+            continue;
           }
         }
       }

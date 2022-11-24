@@ -45,7 +45,8 @@ function recipes(recipe) {
             ingredient.ingredient + ": " + ingredient.quantity + "ml";
         } else if (
           ingredient.unit == "cuillères à soupe" ||
-          ingredient.unit == "cuillères à café"
+          ingredient.unit == "cuillères à café" ||
+          ingredient.unit == "cuillère à soupe"
         ) {
           li.textContent =
             ingredient.ingredient + ": " + ingredient.quantity + " cuillères";
@@ -54,14 +55,12 @@ function recipes(recipe) {
             ingredient.ingredient + ": " + ingredient.quantity + "cl";
         } else if (
           ingredient.unit == "tranches" ||
-          ingredient.unit == "pincées"
+          ingredient.unit == "pincées" ||
+          ingredient.unit == "verres" ||
+          ingredient.unit == "gousses"
         ) {
           li.textContent =
-            ingredient.ingredient +
-            ": " +
-            ingredient.quantity +
-            " " +
-            ingredient.unit;
+            ingredient.ingredient + ": " + ingredient.quantity + " " + ingredient.unit;
         }
       } else {
         li.textContent = ingredient.ingredient + ": " + ingredient.quantity;

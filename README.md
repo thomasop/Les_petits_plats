@@ -2,7 +2,7 @@
 
 ## Algorithme For / While
 
-I use For function in main branch for algorithme
+I use For function in master branch for algorithme
 
 ## Algorithme Foreach / Filter / Map
 

@@ -6,26 +6,16 @@ function mainAlgo(recipes) {
   mainInput.addEventListener("input", function () {
     var tag = document.querySelector(".tag");
     if (mainInput.value.length > 2 && regex.test(mainInput.value)) {
-      var getRecipe = [];
-      for (let i = 0; i < recipes.length; i++) {
-        if (
-          recipes[i].name.toLowerCase().includes(mainInput.value.toLowerCase()) == true ||
-          recipes[i].description.toLowerCase().includes(mainInput.value.toLowerCase()) == true
-        ) {
-          getRecipe.push(recipes[i]);
-          continue;
-        }
-        for (let y = 0; y < recipes[i].ingredients.length; y++) {
-          if (
-            recipes[i].ingredients[y].ingredient
-              .toLowerCase()
-              .includes(mainInput.value.toLowerCase()) == true
-          ) {
-            getRecipe.push(recipes[i]);
-            continue;
-          }
-        }
-      }
+      var getRecipe = recipes.filter((recipe) => {
+        var getIngredient = recipe.ingredients.filter((ingredient) => {
+          return ingredient.ingredient.toLowerCase().includes(mainInput.value);
+        });
+        return (
+          recipe.name.toLowerCase().includes(mainInput.value) ||
+          recipe.description.toLowerCase().includes(mainInput.value) ||
+          getIngredient.length > 0
+        );
+      });
       if (getRecipe.length > 0) {
         deleteAllDom();
         var message = document.querySelector(".message");
@@ -45,7 +35,6 @@ function mainAlgo(recipes) {
         message.textContent = "Aucune recette trouvé";
       }
     } else if (mainInput.value.length == 0) {
-      deleteAllDom();
       var message = document.querySelector(".message");
       message.style.display = "none";
       message.textContent = "";
@@ -56,7 +45,6 @@ function mainAlgo(recipes) {
         displayData(initialArrayOfData);
       }
     } else {
-      deleteAllDom();
       var message = document.querySelector(".message");
       message.style.display = "block";
       message.textContent =
